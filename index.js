@@ -12,6 +12,10 @@ const departments = states.states.filter((s) => s.id_country === 110);
 app.use(express.static("client"));
 
 app.get("/", (req, res) => {
+  res.render("<h1>Test</h1>");
+});
+
+app.get("/departamentos", (req, res) => {
   res.send({
     departments: departments.map((s) => {
       return { id: s.id, name: s.name };
