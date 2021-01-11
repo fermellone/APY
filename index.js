@@ -1,10 +1,15 @@
 const express = require("express");
-const states = require("./data/states.json");
-const cities = require("./data/cities.json");
+const http = require("http");
 const app = express();
 const port = 3977;
+const server = http.Server(app);
+
+const states = require("./data/states.json");
+const cities = require("./data/cities.json");
 
 const departments = states.states.filter((s) => s.id_country === 110);
+
+app.use(express.static("client"));
 
 app.get("/", (req, res) => {
   res.send({
@@ -24,6 +29,6 @@ app.get("/ciudades", (req, res) => {
   });
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
