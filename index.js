@@ -6,7 +6,7 @@ const port = 3000;
 
 const departments = states.states.filter((s) => s.id_country === 110);
 
-app.get("/departmentos", (req, res) => {
+app.get("/", (req, res) => {
   res.send({
     departments: departments.map((s) => {
       return { id: s.id, name: s.name };
