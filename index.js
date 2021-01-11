@@ -1,7 +1,7 @@
 const express = require("express");
 const http = require("http");
 const app = express();
-const port = 3977;
+const port = process.env.PORT || 3000;
 const server = http.Server(app);
 
 const states = require("./data/states.json");
