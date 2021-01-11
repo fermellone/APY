@@ -2,7 +2,7 @@ const express = require("express");
 const states = require("./data/states.json");
 const cities = require("./data/cities.json");
 const app = express();
-const port = 80;
+const port = 3977;
 
 const departments = states.states.filter((s) => s.id_country === 110);
 
