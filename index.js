@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 const server = http.Server(app);
@@ -11,11 +12,15 @@ const departments = states.states.filter((s) => s.id_country === 110);
 
 app.use(express.static("client"));
 
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(__dirname + "/public"));
+app.set("view engine", "pug");
+
 app.get("/", (req, res) => {
-  res.render("<h1>Test</h1>");
+  res.render("index");
 });
 
-app.get("/departamentos", (req, res) => {
+app.get("/api/departamentos", (req, res) => {
   res.send({
     departments: departments.map((s) => {
       return { id: s.id, name: s.name };
@@ -23,7 +28,7 @@ app.get("/departamentos", (req, res) => {
   });
 });
 
-app.get("/ciudades", (req, res) => {
+app.get("/api/ciudades", (req, res) => {
   res.send({
     cities: cities.cities
       .filter((c) => !!departments.some((d) => d.id === c.id_state))
