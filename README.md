@@ -5,5 +5,7 @@ Créditos a [@millan2993](https://github.com/millan2993) por los [datos](https:/
 
 
 # Ciudades
+https://apy-app.herokuapp.com/api/ciudades
 
 # Departamentos
+https://apy-app.herokuapp.com/api/departamentos
