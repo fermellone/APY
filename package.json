@@ -1,0 +1,21 @@
+{
+  "name": "api-ciudades",
+  "version": "1.0.0",
+  "description": "Api para obtener listados de departamentos y ciudades de paraguay",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "departamentos",
+    "ciudades"
+  ],
+  "author": "femellone",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
