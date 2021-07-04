@@ -10,6 +10,14 @@ const cities = require("./data/cities.json");
 
 const departments = states.states.filter((s) => s.id_country === 110);
 
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.use(express.static("client"));
 
 app.set("views", path.join(__dirname, "views"));
