@@ -30,7 +30,9 @@ app.get("/", (req, res) => {
 
 app.get("/api/departamentos", (req, res) => {
   res.send({
-    departments: departments.map((s) => {
+    status_code: 200,
+    message: "Departamentos obtenidos de forma exitosa.",
+    data: departments.map((s) => {
       return { id: s.id, name: s.name };
     }),
   });
@@ -38,7 +40,9 @@ app.get("/api/departamentos", (req, res) => {
 
 app.get("/api/ciudades", (req, res) => {
   res.send({
-    cities: cities.cities
+    status_code: 200,
+    message: "Departamentos obtenidos de forma exitosa.",
+    data: cities.cities
       .filter((c) => !!departments.some((d) => d.id === c.id_state))
       .map((c) => {
         return { id: c.id, department_id: c.id_state, name: c.name };
